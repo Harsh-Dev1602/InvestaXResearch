@@ -44,14 +44,32 @@ export default function Header() {
   return (
     <>
      {/* Top Bar - Clean & Modern */}
-  
+      {!scrolled && (
+        <div className="btn-primary  text-black w-full" style={{ borderRadius:"0", padding: '15px 18px', fontSize: '30px',color:"black" }}   >
+          <div className="w-full mx-auto flex justify-around items-center text-xs font-medium">
+            <div className="flex flex-col md:flex-row items-start gap-2">
+              <span className="flex items-center gap-1.5 transition cursor-default">
+                <IoLocationSharp className=''/> 1, Tilehri, Bilehri, Jabalpur (M.P.) 482020
+              </span>
+              <a href="mailto:info@placiddigital.in" className="flex items-center gap-1.5 transition">
+                <MdEmail className=''/> info@investax.in
+
+              </a>
+            </div>
+            <div className="flex items-center gap-4">
+              <a><FaFacebookF /></a>
+              <a><FaInstagram /></a>
+              <a><FaLinkedinIn /></a>
+            </div>
+          </div>
+        </div>
+      )}
       <header
         style={{
           position: `${scrolled ?  "fixed" : "sticky"}`, top:0, left: 0, right: 0, zIndex: 100,
-          height: '50px',
           background: scrolled ? 'var(--glass-bg)' : 'transparent',
           backdropFilter: scrolled ? 'blur(28px)' : 'none',
-          WebkitBackdropFilter: scrolled ? 'blur(28px)' : 'none',
+          WebkitBackdropFilter: scrolled ? 'blur(28px)' : 'none',padding:" 15px 10px",
           borderBottom: scrolled ? '1px solid var(--glass-border)' : '1px solid transparent',
           transition: 'all 0.4s cubic-bezier(.23,1,.32,1)',
         }} 
